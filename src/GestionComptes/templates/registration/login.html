@@ -1,0 +1,24 @@
+{% extends "../compte/inscription.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+</head>
+<body>
+    {% block test %}
+        Connexion
+    {% endblock %}
+      <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="{% block btn %}Connexion {% endblock%}">
+
+    </form>
+    {% block link %}
+        <a href="{% url 'inscription' %}" class="link">Creer un compte</a>
+    {% endblock %}
+
+</body>
+</html>

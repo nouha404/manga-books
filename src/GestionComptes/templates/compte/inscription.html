@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+        <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font -->
+    <link rel="stylesheet" href="{% static 'css/inscription.css' %}">
+    <title>Inscription</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <header>
+                <img src="{% static 'css/images/icons8-saitama.svg' %}" alt="icone de Saitama">
+                <img src="{% static 'css/images/icons8-menu-burger.svg' %}" alt="menu burger">
+            </header>
+            <div class="text">
+                <p>Rejoignez l'équipage et participez à la conquête du monde</p>
+            </div>
+            <div class="photo-yamato">
+
+            </div>
+        </div>
+        <form method="POST">
+            <header>
+                <h1>Manga Databook</h1>
+            </header>
+            <div class="text">
+                <p>
+                    {% block test %}Creez un compte {% endblock %}
+                </p>
+
+            </div>
+            {% csrf_token %}
+            <div class="content">
+                {{form.as_p}}
+
+                {% if errors %}
+                    <p style="color:red">
+                        {{errors}}
+                </p>
+                {% endif %}
+            </div>
+
+        <input type="submit" value="{% block btn %} Inscription {% endblock %}" id="btn">
+        {% block link %}
+            <a href="{% url 'connexion' %}" class="link">Connexion</a>
+        {% endblock %}
+    </form>
+
+    </div>
+
+     <script src="{% static 'js/inscription.js' %}"></script>
+</body>
+</html>
