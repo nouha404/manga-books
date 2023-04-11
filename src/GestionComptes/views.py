@@ -1,9 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import FormView, DetailView, TemplateView
+from django.views.generic import FormView, TemplateView
 from .forms import Inscription
 from .models import CustomUser
 
@@ -25,5 +24,6 @@ class InscriptionView(FormView):
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
-    template_name = 'compte/profile.html'
+    template_name = 'base/base.html'
+
 
