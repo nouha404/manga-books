@@ -1,8 +1,18 @@
 from django import forms
-from .models import MangaWiki
+from django.urls import reverse
+
+from .models import MangaWiki, Gender
 
 
 class MangaWikiForm(forms.ModelForm):
     class Meta:
         model = MangaWiki
-        fields = '__all__'
+        fields = (
+            'author',
+            'number_of_volume',
+            'status',
+            'note',
+            'gender',
+            'title',
+            'description'
+        )

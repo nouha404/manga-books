@@ -1,42 +1,39 @@
+{% extends "base/header.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-            <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- font -->
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <title>Acceuil</title>
-</head>
-<body class="add-collection-body">
-    {% block header %}
-        <header>
-        <h3>MANGA BOOK</h3>
-        <div class="link">
-            {% block acceuilLink %}
-            <a href="#">Acceuil</a>
-            {% endblock %}
-            <a href="{%static url 'add-collection' %}">Add Collection</a>
-            <a href="#">Statistique</a>
+
+{% block mangatitle %}
+ <div class="cover">
+        <h1>Bienvenue sur Manga Book</h1>
+</div>
+{% endblock %}
+
+{% block collection %}
+<div class="collections">
+        <h2>Collection</h2>
+
+        <div class="tags">
+            <img src="{% static 'css/images/icons8-chercher.svg' %}"  alt="icone de recherche" />
+            <input type="search" placeholder="mots-clés..." />
         </div>
-        <div class="light">
-            <div class="bounce"></div>
-        </div>
-        <div class="search-and-profil">
-            <div class="searching">
-                <img src="{% static 'css/images/icons8-chercher.svg' %}"  alt="icone de recherche" />
-                <input type="search" placeholder="Rechercher..." />
+    </div>
+
+    <div class="item-tag">
+        <h3>Vos Collections vont s'afficher ici</h3>
+    </div>
+
+{#    {% block body %}#}
+     <div class="items-bg">
+{#        {% for item in items %}#}
+            <div class="card">
+                <div class="img"></div>
+                <!-- <div class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ad.</div> -->
+                <div class="manga-info">
+                    <span class="name">
+                        {{ form.title }}
+                    </span>
+                    <span>#{{ form.gender }}</span>
+                </div>
             </div>
-        </div>
-        <div class="profil">
-            <!-- img a inserer -->
-        </div>
-    </header>
-    {% endblock%}
-    {% block body %}
-    {% endblock %}
-  <script src="{% static 'js/home.js' %}"></script>
-</body>
-</html>
+{#        {% endfor %}#}
+     </div>
+{% endblock %}

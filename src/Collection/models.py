@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 
 from GestionComptes.models import CustomUser
@@ -39,6 +40,15 @@ class Gender(models.Model):
     name = models.CharField(blank=False, choices=GENRE_CHOICES, verbose_name="Genre", max_length=100)
     slug = models.SlugField(blank=True)
 
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        super().save(*args, **kwargs)
+
 
 # Create your models here.
 class MangaWiki(models.Model):
@@ -46,12 +56,12 @@ class MangaWiki(models.Model):
     author = models.CharField(blank=False, max_length=40, verbose_name="Auteur")
     number_of_volume = models.IntegerField(blank=False, unique=False, verbose_name="Nombre de volume")
     status = models.CharField(blank=False, choices=LECTURE_CHOIX, verbose_name="Etat de Lecture", max_length=100)
-    note = models.TextField(max_length=25, blank=False)
+    note = models.TextField(max_length=150, blank=False)
 
     gender = models.ManyToManyField(Gender, blank=True)
     title = models.CharField(blank=False, max_length=60, verbose_name="Titre")
     slug = models.SlugField(blank=True)
-    description = models.TextField(max_length=155, verbose_name="Description")
+    description = models.TextField(max_length=655, verbose_name="Description")
 
     class Meta:
         ordering = ['status']

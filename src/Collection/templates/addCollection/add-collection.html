@@ -1,23 +1,47 @@
-{% extends "base/base.html" %}
+{% extends "base/header.html" %}
 
 {% block acceuilLink %}
-    <a href="{% static url 'base' %}">Acceuil</a>
+    <a href="{% url 'base' %}">Acceuil</a>
 
 {% endblock%}
 
 
-{% block body %}
-    <body>
-        <div class="item-tag">
+{% block addCollectTitle %}
+    <div class="item-tag">
         <h3>Ajouter a vos collection</h3>
     </div>
-    <div class="items-bg add-collect">
-        <form method="POST">
-            {% csrf_token %}
-            {{form}}
-        </form>
-        <div class="button">Ajout de la collection</div>
-    </div>
-
-    </body>
 {% endblock %}
+
+{% block addCollectItems %}
+<div class="items-bg add-collect">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="left">
+            <label for="{{form.author.id_for_label}}">{{form.author.label}}</label>
+            {{form.author}}
+            <label for="{{form.number_of_volume.id_for_label}}">{{form.number_of_volume.label}}</label>
+            {{form.number_of_volume}}
+            <label for="{{form.status.id_for_label}}">{{form.status.label}}</label>
+            {{form.status}}
+            <label for="{{form.note.id_for_label}}">{{form.note.label}}</label>
+            {{form.note}}
+
+        </div>
+        <div class="right">
+            <label for="{{form.gender.id_for_label}}">{{form.gender.label}}</label>
+            {{form.gender}}
+            <label for="{{form.title.id_for_label}}">{{form.title.label}}</label>
+            {{form.title}}
+            <label for="{{form.description.id_for_label}}">{{form.description.label}}</label>
+            {{form.description}}
+        </div>
+{#            <div class="bt">#}
+                <input type="submit" class="button" value="Ajout de la collection"> </input>
+{#            </div>#}
+
+    </form>
+
+</div>
+
+{% endblock %}
+

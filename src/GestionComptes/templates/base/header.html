@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+            <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Acceuil</title>
+</head>
+<body class="add-collection-body">
+    {% block header %}
+        <header>
+        <h3>MANGA BOOK</h3>
+        <div class="link">
+            {% block acceuilLink %}
+            <a href="{% url 'base' %}">Acceuil</a>
+            {% endblock %}
+            <a href="{% url 'add-collection' %}">Add Collection</a>
+            <a href="#">Statistique</a>
+        </div>
+        <div class="light">
+            <div class="bounce"></div>
+        </div>
+        <div class="search-and-profil">
+
+            <div class="searching">
+                <img src="{% static 'css/images/icons8-chercher.svg' %}"  alt="icone de recherche" />
+                <input type="search" placeholder="Rechercher..." />
+            </div>
+        </div>
+        <div class="profil">
+            <!-- img a inserer -->
+        </div>
+    </header>
+    {% endblock%}
+
+{% block mangatitle %}
+{% endblock %}
+
+{% block collection %}
+{% endblock %}
+
+{% block addCollectTitle %}
+{% endblock %}
+
+{% block addCollectItems %}
+{% endblock %}
+
+  <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
