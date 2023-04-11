@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'GestionComptes'
+    'GestionComptes',
+    'Collection'
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,7 @@ STATICFILES_DIRS = [
     Path(BASE_DIR, 'MangaWiki/static')
 ]
 AUTH_USER_MODEL = 'GestionComptes.CustomUser'
-LOGIN_REDIRECT_URL = 'profile'
+LOGIN_REDIRECT_URL = 'base'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

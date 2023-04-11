@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('GestionComptes.urls')),
     path('connexion/', views.LoginView.as_view(), name="connexion"),
     path("disconnect/", views.LogoutView.as_view(), name="disconnect"),
+    path('add-collection/', include('Collection.urls'))
 ]
