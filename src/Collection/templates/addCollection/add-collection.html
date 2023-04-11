@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+
+{% block acceuilLink %}
+    <a href="{% static url 'base' %}">Acceuil</a>
+
+{% endblock%}
+
+
+{% block body %}
+    <body>
+        <div class="item-tag">
+        <h3>Ajouter a vos collection</h3>
+    </div>
+    <div class="items-bg add-collect">
+        <form method="POST">
+            {% csrf_token %}
+            {{form}}
+        </form>
+        <div class="button">Ajout de la collection</div>
+    </div>
+
+    </body>
+{% endblock %}
