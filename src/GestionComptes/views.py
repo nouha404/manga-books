@@ -2,7 +2,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import FormView, TemplateView
+from django.views.generic import FormView, TemplateView, ListView
+
+from Collection.models import MangaWiki
 from .forms import Inscription
 from .models import CustomUser
 
@@ -23,7 +25,16 @@ class InscriptionView(FormView):
         return super().form_valid(form)
 
 
-class ProfileView(LoginRequiredMixin, TemplateView):
-    template_name = 'base/base.html'
+# class ProfileView(LoginRequiredMixin, TemplateView):
+#     template_name = 'base/base.html'
 
 
+class CollectionList(LoginRequiredMixin, ListView):
+    model = MangaWiki
+    template_name = 'base/items.html'
+    context_object_name = 'items'
+
+    def get_queryset(self):
+        queryset = MangaWiki.objects.filter(collection_author=self.request.user)
+        print(queryset)
+        return MangaWiki.objects.filter(collection_author=self.request.user)

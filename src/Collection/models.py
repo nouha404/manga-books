@@ -52,6 +52,7 @@ class Gender(models.Model):
 
 # Create your models here.
 class MangaWiki(models.Model):
+    objects = None
     collection_author = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
     author = models.CharField(blank=False, max_length=40, verbose_name="Auteur")
     number_of_volume = models.IntegerField(blank=False, unique=False, verbose_name="Nombre de volume")

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block collection %}
-<div class="collections">
+    <div class="collections">
         <h2>Collection</h2>
 
         <div class="tags">
@@ -21,19 +21,7 @@
         <h3>Vos Collections vont s'afficher ici</h3>
     </div>
 
-{#    {% block body %}#}
-     <div class="items-bg">
-{#        {% for item in items %}#}
-            <div class="card">
-                <div class="img"></div>
-                <!-- <div class="text-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ad.</div> -->
-                <div class="manga-info">
-                    <span class="name">
-                        {{ form.title }}
-                    </span>
-                    <span>#{{ form.gender }}</span>
-                </div>
-            </div>
-{#        {% endfor %}#}
-     </div>
+    {% block body %}
+    {% endblock %}
+
 {% endblock %}

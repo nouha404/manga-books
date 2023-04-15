@@ -1,5 +1,5 @@
 {% extends "base/header.html" %}
-
+{% load static %}
 {% block acceuilLink %}
     <a href="{% url 'base' %}">Acceuil</a>
 
@@ -43,5 +43,9 @@
 
 </div>
 
+{% endblock %}
+
+{% block collectionJS %}
+    <script src="{% static 'js/collection.js' %}"></script>
 {% endblock %}
 

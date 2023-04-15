@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import FormView, CreateView, ListView
 from .forms import MangaWikiForm
-from .models import MangaWiki
 
 
 class CollectionView(CreateView):
@@ -16,3 +15,4 @@ class CollectionView(CreateView):
     def form_valid(self, form):
         form.instance.collection_author = self.request.user
         return super().form_valid(form)
+

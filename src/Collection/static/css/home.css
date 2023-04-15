@@ -343,3 +343,47 @@ select {
     box-shadow: 0 4px 4px rgba(189, 64, 64, 0.25);
     outline: none;
 }
+
+.animation-new-saitama {
+    animation : saitama 400ms ease-out;
+}
+
+@keyframes saitama {
+    0% {
+        transform: translateX(-100%) scale(0.8);;
+
+    }
+    100% {
+        transform: translateX(0) scale(0.8);
+    }
+}
+@keyframes burger {
+    0% {
+        transform: translateX(-100%) scale(1.4);
+
+
+    }
+    100% {
+        transform: translateX(0) scale(1.4);
+    }
+}
+.burger-color:hover {
+    transform: scale(1.5);
+}
+.burger-color {
+    background: white;
+    cursor: pointer;
+    transform: scale(1.4);
+    animation : burger 400ms ease-out 0.1s;
+}
+.line-header {
+    border: 1px solid #033A70;
+
+}
+
+.burger-deplacement {
+  position: relative;
+  right: 2%;
+  transform: scale(1.4);
+
+}

@@ -5,6 +5,8 @@ from .models import MangaWiki, Gender
 
 
 class MangaWikiForm(forms.ModelForm):
+    objects = None
+
     class Meta:
         model = MangaWiki
         fields = (
