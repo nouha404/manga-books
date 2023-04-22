@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- font -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% block staticLink %}
+    {% endblock %}
     <title>Acceuil</title>
 </head>
 <body class="add-collection-body">
@@ -19,7 +21,7 @@
             <a href="{% url 'base' %}">Acceuil</a>
             {% endblock %}
             <a href="{% url 'add-collection' %}">Add Collection</a>
-            <a href="#">Statistique</a>
+            <a href="{% url 'stat' %}">Statistique</a>
         </div>
         <div class="light">
             <div class="bounce"></div>

@@ -1,0 +1,82 @@
+{% extends "base/header.html" %}
+{% load static %}
+
+{% block staticLink %}
+    <link rel="stylesheet" href="{% static 'css/statistic.css' %}">
+{% endblock %}
+
+{% block addCollectTitle %}
+    <div class="item-tag">
+        <h3>Statistique du site</h3>
+    </div>
+{% endblock %}
+
+{% block addCollectItems %}
+    <div class="items-bg add-collect">
+        <div class="container-stat bg-stat">
+            <div class="left">
+
+                <div class="min-card">
+                    <p>40</p>
+                    <span>shonen</span>
+                </div>
+
+                 <div class="min-card">
+                    <p>40</p>
+                    <span>seinen</span>
+                </div>
+
+                <div class="min-card">
+                    <p>40</p>
+                    <span>shojo</span>
+                </div>
+
+                <div class="min-card">
+                    <p>40</p>
+                    <span>Fantasy</span>
+                </div>
+
+                <div class="min-card">
+                    <p>40</p>
+                    <span>horreur</span>
+                </div>
+
+                <div class="min-card">
+                    <p>invisible</p>
+                    <span>invisible</span>
+                </div>
+
+                <div class="user-actif">
+                    <p>Utilisateurs actifs</p>
+                    <div class="container-stat">
+                         <div class="icon-raspberry">
+
+                         </div>
+                        <div class="stat">
+                            88
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="container-stat-manga">
+                    <div class="total">
+                        <span>Total  mangas enregistrés</span>
+                        <span>193k</span>
+                    </div>
+
+                    <div class="total">
+                        <span>Manga le plus populaire</span>
+                        <span>One Piece</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block collectionJS %}
+    <script src="{% static 'js/stats.js' %}"></script>
+{% endblock %}

@@ -38,3 +38,9 @@ class CollectionList(LoginRequiredMixin, ListView):
         queryset = MangaWiki.objects.filter(collection_author=self.request.user)
         print(queryset)
         return MangaWiki.objects.filter(collection_author=self.request.user)
+
+
+class StatiticView(ListView):
+    model = MangaWiki
+    template_name = 'base/statistic.html'
+    context_object_name = 'stats'

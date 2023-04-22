@@ -1,0 +1,121 @@
+ .bg-stat {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    background: #757575;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px
+}
+
+.min-card {
+    width: 185px;
+    height: 60px;
+
+    background: #251C1C;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.5);
+
+}
+.bg-stat .left, .right {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    min-height: 60vh;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.bg-stat .right {
+    width: 40%;
+}
+
+.min-card p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.user-actif {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    width: 491px;
+    height: 20px;
+
+    position: relative;
+    right: 5%;
+    border-radius: 15px;
+}
+
+
+.container-stat .stat {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+
+}
+.container-stat .icon-raspberry {
+    width: 35px;
+    height: 35px;
+    background: url("images/icons8-raspberry.svg");
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.user-actif .container-stat {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+
+    background: #928888;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.user-actif .container-stat:nth-child(2) {
+    color: white;
+    padding-right: 15px;
+}
+
+.user-actif p {
+    color: white;
+    position: relative;
+    bottom: 15px;
+}
+
+.right .container-stat-manga {
+    width: 347px;
+    height: 372px;
+    background: #251C1C;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+.container-stat-manga .total {
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.container-stat-manga .total span:nth-child(1) {
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+.container-stat-manga .total span:nth-child(2) {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+}
+.container-stat-manga .total span:nth-child(1):hover {
+    transform: translateY(3%);
+}
