@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- font -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/delete.css' %}">
     {% block staticLink %}
     {% endblock %}
     <title>Acceuil</title>
@@ -51,9 +53,14 @@
 {% block addCollectItems %}
 {% endblock %}
 
+{% block btnEdite %}
+{% endblock %}
 
 {% block collectionJS %}
     <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+{% block body %}
 {% endblock %}
 </body>
 </html>

@@ -3,18 +3,21 @@
 {% block body %}
          <div class="items-bg">
             {% for item in items %}
-                <div class="card">
-                    <div class="img"></div>
-                    <div class="text-description">
-                        {{ item.description }}
+                <a href="{% url 'details' slug=item.slug %}">
+                    <div class="card">
+                        <div class="img"></div>
+                        <div class="text-description">
+                            {{ item.description }}
+
+                        </div>
+                        <div class="manga-info">
+                            <span class="name">
+                                {{ item.title }}
+                            </span>
+    {#                        <span>#{{ item.gender }}</span>#}
+                        </div>
                     </div>
-                    <div class="manga-info">
-                        <span class="name">
-                            {{ item.title }}
-                        </span>
-                        <span>#{{ item.gender }}</span>
-                    </div>
-                </div>
+                </a>
             {% endfor %}
          </div>
 {% endblock %}

@@ -2,8 +2,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 from django.urls import reverse_lazy
-from django.views.generic import FormView, TemplateView, ListView
+from django.views.generic import FormView, TemplateView, ListView, DetailView, UpdateView, DeleteView
 
+from Collection.forms import MangaWikiForm
 from Collection.models import MangaWiki
 from .forms import Inscription
 from .models import CustomUser
@@ -21,12 +22,8 @@ class InscriptionView(FormView):
             context['errors'] = "Mots de passe non identiques"
             return self.render_to_response(context)
 
-        CustomUser.object.create_user(email=form.cleaned_data['email'], password=form.cleaned_data['password'])
+        CustomUser.objects.create_user(email=form.cleaned_data['email'], password=form.cleaned_data['password'])
         return super().form_valid(form)
-
-
-# class ProfileView(LoginRequiredMixin, TemplateView):
-#     template_name = 'base/base.html'
 
 
 class CollectionList(LoginRequiredMixin, ListView):
@@ -38,6 +35,29 @@ class CollectionList(LoginRequiredMixin, ListView):
         queryset = MangaWiki.objects.filter(collection_author=self.request.user)
         print(queryset)
         return MangaWiki.objects.filter(collection_author=self.request.user)
+
+
+class CollectionDetails(DetailView):
+    model = MangaWiki
+    template_name = 'base/details.html'
+    context_object_name = 'details'
+
+
+class CollectionUpdate(UpdateView):
+    model = MangaWiki
+    form_class = MangaWikiForm
+    template_name = 'base/update.html'
+
+    # success_url = reverse_lazy('details')
+
+    def get_success_url(self):
+        return reverse_lazy('details', kwargs={'slug': self.object.slug})
+
+
+class CollectionDelete(DeleteView):
+    model = MangaWiki
+    template_name = 'base/delete.html'
+    success_url = reverse_lazy('base')
 
 
 class StatiticView(ListView):

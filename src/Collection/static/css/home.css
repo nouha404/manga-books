@@ -119,6 +119,7 @@ h3 {
     background: #1E81B0;
     min-height: 9vh;
 }
+
 .add-collection-body .collections .tags {
     display: flex;
     justify-content: space-around;
@@ -255,7 +256,7 @@ form .right {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
     height: 45px;
-    width: 75%;
+    wdth: 75%;
     margin: 10px 5%;
     outline: none;
     border: none;
@@ -385,5 +386,4 @@ select {
   position: relative;
   right: 2%;
   transform: scale(1.4);
-
 }

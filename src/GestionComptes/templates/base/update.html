@@ -1,0 +1,33 @@
+{% extends "base/header.html" %}
+{% load static %}
+
+
+{% block addCollectItems %}
+<div class="items-bg add-collect">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="left">
+            <label for="{{form.author.id_for_label}}">{{form.author.label}}</label>
+            {{form.author}}
+            <label for="{{form.number_of_volume.id_for_label}}">{{form.number_of_volume.label}}</label>
+            {{form.number_of_volume}}
+            <label for="{{form.status.id_for_label}}">{{form.status.label}}</label>
+            {{form.status}}
+            <label for="{{form.note.id_for_label}}">{{form.note.label}}</label>
+            {{form.note}}
+
+        </div>
+        <div class="right">
+            <label for="{{form.gender.id_for_label}}">{{form.gender.label}}</label>
+            {{form.gender}}
+            <label for="{{form.title.id_for_label}}">{{form.title.label}}</label>
+            {{form.title}}
+            <label for="{{form.description.id_for_label}}">{{form.description.label}}</label>
+            {{form.description}}
+        </div>
+                <input type="submit" class="button" value="Modifier"> </input>
+    </form>
+
+</div>
+
+{% endblock %}

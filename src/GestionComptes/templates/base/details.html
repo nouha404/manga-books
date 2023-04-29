@@ -1,0 +1,64 @@
+{% extends "base/header.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="btn-editor">
+
+        <a href="{% url 'base' %}">
+            <div class="child">Retour</div>
+        </a>
+
+        <a href="{% url 'deleted' slug=details.slug %}">
+            <div class="child">Supprimer</div>
+        </a>
+
+        <a href="{% url 'editer' slug=details.slug %}">
+            <div class="child">Editer</div>
+        </a>
+
+</div>
+
+<div class="container-detail">
+    <div class="items">
+        <div class="card">
+            <div class="img"></div>
+            <div class="detail">
+                <div class="span">{{ details.title }}</div>
+                <div class="span">#{{ details.gender }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="items">
+        <div class="item">
+            <div class="span">Auteur : </div>
+            <div class="span">{{ details.author }}</div>
+        </div>
+        <div class="item">
+            <div class="span">Nombre de Volume</div>
+            <div class="span">{{ details.number_of_volume }}</div>
+        </div>
+        <div class="item">
+            <div class="span">Etat de  lecture</div>
+            <div class="span">{{ details.status }}</div>
+        </div>
+        <div class="item last">
+            <div class="span">Notes</div>
+            <label>
+                <textarea maxlength=150 disabled>{{ details.note }}</textarea>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="desc">
+    <h2>Description</h2>
+</div>
+<div class="textarea">
+    <label>
+        <textarea disabled>{{ details.description }}</textarea>
+    </label>
+</div>
+
+{% endblock %}

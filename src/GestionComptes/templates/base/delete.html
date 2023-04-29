@@ -1,0 +1,24 @@
+{% extends "base/header.html" %}
+{% load static %}
+
+
+{% block body %}
+    <label>Voulez vous supprimer {{object.title}} ?</label>
+
+
+        <div class="delete-container">
+            <a href="{% url 'details' slug=object.slug %}">
+                Annuler
+            </a>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="submit" class="button" value="Confirmer"> </input>
+           </form>
+
+
+
+        </div>
+
+
+    {% endblock %}
+

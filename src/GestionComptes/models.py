@@ -31,7 +31,7 @@ class CustomUser(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    object = UserManger()
+    objects = UserManger()
 
     def has_perm(self, perm, obj=None):
         return True

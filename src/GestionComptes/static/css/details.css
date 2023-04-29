@@ -1,0 +1,141 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+.btn-editor {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-editor .child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #902727;
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    width: 200px;
+    height: 69px;
+    transform: scale(0.7);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.child:hover {
+    transform: scale(0.71);
+}
+.btn-editor  a {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.container-detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-detail  .items {
+      width: 40%;
+}
+.container-detail  .items:nth-child(1) {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container-detail .items:nth-child(2) {
+    width: 60%;
+}
+.items .card {
+    width: 270px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1E81B0;
+    border-radius: 25px;
+    flex-direction: column;
+}
+.items .card:hover {
+    transform: scale(1);
+}
+.items .card .img {
+    background: url('images/yamato.png') center/cover;
+
+}
+.card .detail {
+    min-width: 90%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.detail .span {
+    color: white;
+}
+.items .item {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    padding: 15px;
+}
+.item .span {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 44px;
+}
+.container-detail .items:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.items .last {
+    display: flex;
+    flex-direction: column;
+}
+.last .span {
+    border-bottom: 1px solid black ;
+}
+.items .last textarea {
+    width: 90%;
+    height: 10vh;
+}
+.desc {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.desc h2 {
+    width: 480px;
+    height: 83px;
+    background: #1E81B0;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+
+}
+.textarea textarea {
+    width: 90%;
+    height: 546px;
+
+    background: #1E81B0;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+}
